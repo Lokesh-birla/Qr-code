@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+section{
+    margin-top: 100px;
+}
+
+    .Qr{
+        font-family: monospace;
+        width:25%;
+        border-radius: 10px;
+        margin: auto;
+        background-color: rgb(136 202 255);
+        height: auto;
+        padding: 50px 0px; 
+    }
+    #qrpng{
+        background-color: white;
+        text-align: center;
+        width: 60%;
+        height: 0px;
+        overflow: hidden;
+        margin: auto;
+    }
+     .At{
+      height:auto !important;
+      padding-bottom: 10px;
+    }
+    .qrpng img{
+        width:100px !important;
+        height: 100px !important;
+    }
+    .bg {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+}
+    .Qrch {
+    margin: auto;
+    width: 62.5%;
+    padding: 22px;
+}
+    .Qrch button {
+    margin: 20px 0px;
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 8px 35px;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size:1.1rem;
+}
+    .Qrch input{
+        width: 200px;
+        height: 30px;
+    }
+
+    @media screen and (max-width: 1366px) {
+        .Qr {
+    font-family: monospace;
+    width: 30%;
+    margin: auto;
+    background-color: rgb(136 202 255);
+    height: auto;
+    padding: 50px 0px;
+}
+}
+    @media screen and (max-width: 1024px) {
+        .Qr {
+    font-family: monospace;
+    width: 48%;
+    margin: auto;
+    background-color: rgb(136 202 255);
+    height: auto;
+    padding: 50px 0px;
+}
+}
+@media screen and (max-width : 768px) {
+    .Qr{
+        width: 65%;
+    }
+    .Qrch input {
+    width: 205px;
+    height: 25px;
+}
+}
+@media screen and (max-width : 480px) {
+    .Qr {
+        width: 100%;
+    }
+ }
+
+</style>
+<section>
+<h1 style="font-size: 35px;text-align :center;">QR Code Generator</h1>
+    <div class="Qr">
+
+      <div class="bg">
+        <div class="Qrch">
+            <h1>QR Code Generator </h1>
+        <p>Paste a url or enter</p>
+        <div>
+            <input type="text" placeholder="code" id="value">
+            <br> 
+        </div>
+        <button id="button">Generator Qr Code</button>
+        </div>
+
+        <div id="qrpng">
+            <img class="img" src="" alt="">
+        </div>
+      </div>
+    </div>
+</section>
+<script>
+
+
+let but = document.getElementById('button');
+let imgvalue = document.getElementById('value');
+let img = document.querySelector('#qrpng img');
+
+
+but.addEventListener('click',function(){
+
+
+
+
+    let val = imgvalue.value;
+
+    if(!val) return;
+
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${val} `;
+
+
+document.getElementById('qrpng').classList = 'At';
+
+
+})
+
+
+    // }
+//     let qrvalue = document.getElementById('value');
+//     let but = document.getElementById('button');
+    
+//     let imgvalue = document.querySelector('#qrpng img');
+//     but.addEventListener('click',function(){     
+//         let qr = qrvalue.value;
+//         if(!qr) return;
+//         imgvalue.src =  `https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=${qr}`;
+//         document.getElementById("qrpng").classList = 'qrpng At';
+    
+// })
+
+
+
+let arr = [1,2,2,1,3,4,5,3,4]
+console.log(arr)
+let arrsort = new Set(arr)
+
+console.log(arrsort)
+
+
+
+</script>
+<body>
+</body>
+</html>
